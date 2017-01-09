@@ -26,10 +26,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Our services</a></li>
-                    <li><a href="#">Make an appointment</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">About us</a></li>
+                    <li><a href="#services">Our services</a></li>
+                    <li><a href="#appointment">Make an appointment</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#about">About us</a></li>
 
                     <form class="navbar-form navbar-right">
                         <div class="form-group">
@@ -80,20 +80,18 @@
     <hr>
 
     <!-- Services -->
-    <div class="container">
+    <div class="container" id="services">
         <h2 class="text-center">Our services</h2>
 
         <div class="row">
             <div class="col-md-4">
                 <h4>Styling <span class="glyphicon glyphicon-star"></span></h4>
                 <img src="http://i1.wp.com/static.au.groupon-content.net/65/22/1418882332265.jpg?resize=350%2C200">
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div>
 
             <div class="col-md-4">
                 <h4>Coloring <span class="glyphicon glyphicon-tint"></span></h4>
                 <img src="http://i2.wp.com/benefitof.net/wp-content/uploads/2014/06/640px-Haircoloring.jpg?resize=350%2C200">
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div>
 
             <div class="col-md-4">
@@ -104,13 +102,98 @@
     </div>
     <!-- END Services -->
 
+    <hr>
+
     <!-- Appointment -->
-    <div class="container">
+    <div class="container" id="appointment">
         <h2 class="text-center">Make an appointment</h2>
+        <br>
 
+        <div class="row">
+            <div class="col-md-4 col-md-offset-1 form-group">
+                <input type="text" class="form-control" placeholder="First and last name">
+                <br>
+                <input type="text" class="form-control" placeholder="Phone number">
+                <br>
+                <input type="text" class="form-control" placeholder="Date">
+                <br>
+                <textarea class="form-control" placeholder="Other info" rows="5"></textarea>
+                <br>
+                <input type="checkbox"> I agree Matej is the best hairdresser :)
+                <br>
+                <br>
+                <button class="btn btn-success center-block">Send</button>
+            </div>
 
+            <div class="col-md-4 col-md-offset-1">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Working hours</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>8:00 - 16:00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>10:00 - 18:00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>8:00 - 16:00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Thursday</td>
+                            <td>8:00 - 16:00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Friday</td>
+                            <td>12:00 - 20:00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Saturday</td>
+                            <td>8:00 - 16:00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Sunday</td>
+                            <td>8:00 - 12:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>* We don't work on holidays.</p>
+            </div>
+        </div>
     </div>
     <!-- END Appointment -->
+
+    <hr>
+
+    <!-- FAQ -->
+    <div class="container" id="faq">
+        <h2 class="text-center">FAQ</h2>
+        <br>
+    </div>
+    <!-- END FAQ -->
+
+    <hr>
+
+    <!-- About -->
+    <div class="container" id="about">
+        <h2 class="text-center">About us</h2>
+        <br>
+    </div>
+    <!-- END About -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
