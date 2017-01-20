@@ -17,16 +17,11 @@ def list_all_vehicles(vehicles):
         print "There is not any vehicle yet entered in the program. Please select option b to add the first vehicle."
     else:
         for index, vehicle in enumerate(vehicles):
-            print "%s) %s %s with %s km driven so far. Last service date: %s." % (index+1, vehicle.brand, vehicle.model,
+            print "%s) %s %s with %s km driven so far. Last service date: %s" % (index+1, vehicle.brand, vehicle.model,
                                                                                  vehicle.km_done, vehicle.service_date)
 
 
-def add_new_vehicle(vehicles):
-    brand = raw_input("Please enter the brand of the vehicle: ")
-    model = raw_input("Please enter the model of the vehicle: ")
-    km_done_str = raw_input("Please enter the amount of kilometers that vehicle has done so far (just a number): ")
-    service_date = raw_input("Please enter the last service date (DD.MM.YYYY): ")
-
+def create_vehicle_object(brand, model, km_done_str, service_date, vehicles):
     try:
         km_done_str = km_done_str.replace(",", ".")
         km_done = float(km_done_str)
@@ -35,8 +30,22 @@ def add_new_vehicle(vehicles):
 
         vehicles.append(new_vehicle)
 
-        print "You have successfully added a new vehicle %s %s!" % (brand, model)
+        return True
     except ValueError:
+        return False
+
+
+def add_new_vehicle(vehicles):
+    brand = raw_input("Please enter the brand of the vehicle: ")
+    model = raw_input("Please enter the model of the vehicle: ")
+    km_done_str = raw_input("Please enter the amount of kilometers that vehicle has done so far (just a number): ")
+    service_date = raw_input("Please enter the last service date (DD.MM.YYYY): ")
+
+    result = create_vehicle_object(brand, model, km_done_str, service_date, vehicles)
+
+    if result:
+        print "You have successfully added a new vehicle %s %s!" % (brand, model)
+    else:
         print "Please enter just a number for the kilometers done so far."
 
 
@@ -78,10 +87,24 @@ def change_service_date(vehicles):
     print "Service date updated!"
 
 
+def save_to_disk(vehicles):
+    with open("vehicles.txt", "w+") as veh_file:
+        for vehicle in vehicles:
+            veh_file.write("%s,%s,%s,%s\n" % (vehicle.brand, vehicle.model, vehicle.km_done, vehicle.service_date))
+
+
 def main():
     print "Welcome to the Vehicle Manager program."
 
     vehicles = []
+
+    with open("vehicles.txt", "r") as v_file:
+        for line in v_file:
+            try:
+                brand, model, km_done_str, service_date = line.split(",")
+                create_vehicle_object(brand, model, km_done_str, service_date, vehicles)
+            except ValueError:
+                continue
 
     while True:
         print ""  # empty line
@@ -93,7 +116,7 @@ def main():
         print "e) Quit the program."
         print ""
 
-        choice = raw_input("Which option would you like to choose? (a, b, c, d) ")
+        choice = raw_input("Which option would you like to choose? (a, b, c, d, e) ")
         print ""
 
         if choice.lower() == "a":
@@ -106,6 +129,7 @@ def main():
             change_service_date(vehicles)
         elif choice.lower() == "e":
             print "Thank you for using the Vehicle Manager. Have a nice day!"
+            save_to_disk(vehicles)
             break
         else:
             print "I'm sorry, but I didn't understand your choice. Please type in just a letter, either a, b, c or d."
