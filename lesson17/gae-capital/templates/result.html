@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Result{% endblock title %}
+
+{% block page_content %}
+
+{% if result %}
+    <img src="/assets/img/correct.jpg" height="300px">
+    <p>Yaaay! Your answer is correct. {{ item.capital }} is indeed the capital of {{ item.country }}!</p>
+{% else %}
+    <img src="/assets/img/wrong.jpg" height="300px">
+    <p>Sorry, but your answer is wrong... The capital of {{ item.country }} is {{ item.capital }}!</p>
+{% endif %}
+
+<p><a href="/">Try again!</a></p>
+
+{% endblock page_content %}
