@@ -1,10 +1,12 @@
 # About
 
-Basic boilerplate code for Google App Engine projects.
+Basic GAE project with Jinja templating engine
 
-### Instructions
+# Usage
 
-1. Fork this project
-1. Clone the forked repository (on your profile)
-2. Run the code with Google App Engine Launcher (File/Add existing application) or with this command: `python dev_appserver.py ./`
-3. In Launcher click on the app and then Run and Browse. If you ran the app from the command line, open your browser and go to: `http://localhost:8080/fakebook.html`
+1. Click on Download ZIP
+2. Save on your disk and unzip
+4. Build something nice ;)
+5. Run the app with this command: `dev_appserver.py ./`
+6. Open your browser and go to: `http://localhost:8080`
+

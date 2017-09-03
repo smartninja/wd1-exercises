@@ -6,10 +6,7 @@ Basic GAE project with Jinja templating engine
 
 1. Click on Download ZIP
 2. Save on your disk and unzip
-3. Change the application ID in app.yaml
 4. Build something nice ;)
+5. Run the app with this command: `dev_appserver.py ./`
+6. Open your browser and go to: `http://localhost:8080`
 
-# Run
-
-- Run with GAE Launcher
-- or via the Terminal: dev_appserver.py .
