@@ -21,7 +21,7 @@ def main():
 
 
 def check_guess(user_guess, country, cc_dict):
-    capital = cc_dict.get(country)
+    capital = cc_dict.get(country)  # get the selected country value from the dictionary
 
     if user_guess == capital:
         print "Correct! The capital of %s is indeed %s." % (country, capital)
@@ -30,5 +30,5 @@ def check_guess(user_guess, country, cc_dict):
         print "Sorry, you are wrong. The capital of %s is %s." % (country, capital)
         return False
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # this means that if somebody ran this Python file, execute only the code below
     main()

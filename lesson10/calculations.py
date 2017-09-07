@@ -10,5 +10,5 @@ def main():
     print numbers_sum(12, 88)
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__main__":  # this means that if somebody ran this Python file, execute only the code below
+    main()  # execute the main function

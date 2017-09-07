@@ -2,8 +2,9 @@ print "Welcome to the fizzbuzz game!"
 
 end = raw_input("Please enter a number between 1 and 100: ")
 
+# try-except statement: if the code inside try fails, the program automatically goes to the except part.
 try:
-    end = int(end)
+    end = int(end)  # convert string into number
 
     for num in range(1, end+1):
         if num % 3 == 0 and num % 5 == 0:

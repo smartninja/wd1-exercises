@@ -14,8 +14,8 @@ while True:
 
 print "Menu: %s" % menu
 
-with open("menu.txt", "w+") as menu_file:
+with open("menu.txt", "w+") as menu_file:  # open the file for writing and overwrite the previous file (w+)
     for dish in menu:
-        menu_file.write("%s, %s EUR\n" % (dish, menu[dish]))
+        menu_file.write("%s, %s EUR\n" % (dish, menu[dish]))  # write this text into the file and add a new line at the end (\n)
 
 print "Goodbye!"

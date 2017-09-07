@@ -24,7 +24,7 @@ def check_guess():
     else:
         result_text = "WRONG! Your guess is too low."
 
-    tkMessageBox.showinfo("Result", result_text)
+    tkMessageBox.showinfo("Result", result_text)  # message box
 
 # submit button
 submit = Tkinter.Button(window, text="Submit", command=check_guess)  # check_guess, not check_guess()

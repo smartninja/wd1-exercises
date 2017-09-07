@@ -18,5 +18,5 @@ def main():
             print "Sorry, your guess is too low... Please try again."
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # this means that if somebody ran this Python file, execute only the code below
     main()

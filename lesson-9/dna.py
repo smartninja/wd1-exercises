@@ -62,6 +62,7 @@ dna_file.close()
 
 suspect = {}
 
+# iteritems() function will iterate through the characteristics data
 for key, value in characteristics.iteritems():
     for characteristic, sequence in value.iteritems():
         if dna.find(sequence) != -1:

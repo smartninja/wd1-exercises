@@ -106,5 +106,5 @@ def main():
             print "Sorry, I didn't understand your selection. Please try again."
             continue
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # this means that if somebody ran this Python file, execute only the code below
     main()

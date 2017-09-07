@@ -26,6 +26,6 @@ for season in seasons:
             for episode_row in episode_rows:
                 episode_views = episode_row.findAll('td')[-1]
 
-                views += float(re.sub(r'\[?[0-9]+\]', '', episode_views.text))
+                views += float(re.sub(r'\[?[0-9]+\]', '', episode_views.text))  # here we search for numbers in the text with a help of a regex (regular expression)
 
 print str(views) + ' millions'
