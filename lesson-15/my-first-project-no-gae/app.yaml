@@ -1,0 +1,14 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /templates
+  static_dir: templates/
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: latest
