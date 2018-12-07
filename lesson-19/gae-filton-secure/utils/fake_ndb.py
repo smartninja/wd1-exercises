@@ -4,13 +4,26 @@ from sqlite3 import OperationalError
 import json
 
 
+class Key:
+    get_id = 221424253532525
+
+    def __init__(self):
+        self.get_id = 2384723532570237
+
+    @classmethod
+    def id(cls):
+        return cls.get_id
+
+
 class Model:
     def __init__(self, **kwargs):
         for attr in kwargs:
             setattr(self, attr, kwargs.get(attr))
 
+        self.key = Key
+
     @classmethod
-    def query(cls):
+    def query(cls, *args, **kwargs):
         return cls
 
     @classmethod
@@ -39,7 +52,7 @@ class Model:
         table_fields = {}
 
         for key in self.__class__.__dict__:
-            if not key.startswith("_"):
+            if not key.startswith("_") and not key.startswith("key"):
                 table_fields[key] = getattr(self, key)
 
         # connect to the SQLite database
@@ -104,7 +117,7 @@ class Model:
                     fields.append(item)
 
         result = []
-        for row in fetch_all:
+        for id, row in enumerate(fetch_all):
             row_dict = {}
 
             for i, item in enumerate(row):
@@ -115,6 +128,8 @@ class Model:
                     else:
                         item = unicode(item, "utf8")
                 row_dict[fields[i]] = item
+
+            row_dict["get_id"] = id
 
             result.append(row_dict)
 
