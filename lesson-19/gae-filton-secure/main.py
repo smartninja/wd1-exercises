@@ -57,6 +57,7 @@ class GuestbookHandler(BaseHandler):
 
         return self.redirect_to("guestbook-site")  # see name in route
 
+
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
     webapp2.Route('/guestbook', GuestbookHandler, name="guestbook-site"),

@@ -1,4 +1,7 @@
-from google.appengine.ext import ndb
+try:
+    from google.appengine.ext import ndb
+except ImportError:
+    from utils import fake_ndb as ndb
 
 
 class Message(ndb.Model):
