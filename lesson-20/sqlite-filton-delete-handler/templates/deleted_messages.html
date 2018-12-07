@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Deleted messages{% endblock title %}
+
+{% block page_content %}
+<h3>Deleted messages</h3>
+
+<h3>Messages</h3>
+{% for message in messages %}
+    <p>
+        <strong><a href="mailto:{{message.email}}">{{ message.author_name }}</a></strong>
+        at {{ message.created.strftime('%d %B %Y at %H:%M') }}:
+        (<a href="/message/{{message.id}}/restore">restore</a>,
+        <a href="/message/{{message.id}}/complete-delete">permanently delete</a>)
+        <br>
+        <em>{{ message.message }}</em>
+    </p>
+    <br>
+{% else %}
+    <p>No messages yet.</p>
+{% endfor %}
+{% endblock page_content %}
