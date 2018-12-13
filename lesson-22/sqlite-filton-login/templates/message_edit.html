@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Message{% endblock title %}
+
+{% block page_content %}
+<h3>Guestbook: Edit message</h3>
+
+<form method="post">
+    <p><strong>Edit the Guestbook message</strong></p>
+
+    <p><strong>Author name:</strong> {{ message.author_name }}</p>
+
+    <p><strong>Author email:</strong> {{ message.email }}</p>
+
+    <p><textarea name="message" rows="10" cols="80">{{ message.message }}</textarea></p>
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock page_content %}
