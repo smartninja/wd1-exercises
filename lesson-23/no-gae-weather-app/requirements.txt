@@ -1,0 +1,4 @@
+WebOb
+Paste
+webapp2
+requests
